@@ -1,12 +1,21 @@
 import "./UserList.css";
 import UserData from "../UserData/UserData";
 
-const UserList = () => {
-    return (
-        <div>
-            <UserData />
-        </div>
-    )
-}
+const UserList = (props) => {
+  return (
+    <div className="userList-wrap">
+      <ul className="userList">
+        {props.usersList.map((user, index) => (
+          <UserData
+            key={index}
+            name={user.name}
+            age={user.age}
+            id={user.id}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-export default UserList
+export default UserList;

@@ -1,0 +1,15 @@
+.userList-wrap{
+    margin-top: 30px;
+    width: 60%;
+    max-width: 500px;
+    background-color: var(--bisque);
+    border-radius: 3px;
+    padding: 10px 15px;
+}
+
+.userList-wrap .userList{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    row-gap: 10px;
+}
