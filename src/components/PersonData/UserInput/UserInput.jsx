@@ -22,6 +22,14 @@ const UserInput = (props) => {
     }
   };
 
+  const onCloseHandler = () => {
+    setIsValid(true);
+  };
+
+  let alert = (
+    <p>Please Enter Your Valid name or age</p>
+  )
+
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
@@ -30,12 +38,9 @@ const UserInput = (props) => {
       age: enteredAge,
       id: Math.random().toString(),
     };
-
-    if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
+    if(enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
       setIsValid(false);
       return;
-    } else {
-      setIsValid(true);
     }
 
     props.addUser(personData);
@@ -47,8 +52,8 @@ const UserInput = (props) => {
     <div className={`form-wrap ${!isValid ? "invalid" : ""}`}>
       <div className="alert-wrap">
         <div className="alert">
-          <p>Your input is not valid</p>
-          <button>
+          {alert}
+          <button onClick={onCloseHandler}>
             <span>
               <i className="fa-solid fa-xmark"></i>
             </span>
