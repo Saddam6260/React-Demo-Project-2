@@ -11,6 +11,7 @@ const UserList = (props) => {
             name={user.name}
             age={user.age}
             id={user.id}
+            onDelete={props.onDelete}
           />
         ))}
       </ul>

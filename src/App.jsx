@@ -11,21 +11,24 @@ function App() {
 
   const addUserHandler = (person) => {
     console.log(person);
-    setUsersInfo(prevUsers => {
+    setUsersInfo((prevUsers) => {
       const UpdateUser = [...prevUsers];
       UpdateUser.unshift(person);
       return UpdateUser;
-    })
+    });
   };
 
-  let content = (
-    <p className="no-user">No Such File Here</p>
-  )
+  const onDeleteHandler = (userId) => {
+    setUsersInfo((prevUsers) => {
+      const UpdateUser = prevUsers.filter((user) => user.id !== userId);
+      return UpdateUser;
+    });
+  };
 
-  if(usersInfo.length > 0) {
-    content = (
-      <UserList usersList={usersInfo} />
-    )
+  let content = <p className="no-user">No Such File Here</p>;
+
+  if (usersInfo.length > 0) {
+    content = <UserList usersList={usersInfo} onDelete={onDeleteHandler} />;
   }
 
   return (

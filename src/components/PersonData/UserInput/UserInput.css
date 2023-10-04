@@ -5,6 +5,24 @@
     padding: 10px 20px;
     border-radius: 3px;
 }
+
+.form-wrap .alert-wrap{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+.form-wrap.invalid .alert-wrap{
+    display: block;
+}
+
 .input-wrap{
     display: flex;
     flex-flow: column;

@@ -5,14 +5,21 @@ import Button from "../../UI/Button";
 
 const UserInput = (props) => {
   const [enteredName, setEnteredName] = useState("");
-  const [enteredAge, setEnteredAge] = useState();
+  const [enteredAge, setEnteredAge] = useState("");
+  const [isValid, setIsValid] = useState(true);
 
   const nameChangeHandler = (event) => {
     setEnteredName(event.target.value);
+    if (event.target.value.trim().length > 0) {
+      setIsValid(true);
+    }
   };
 
   const ageChangeHandler = (event) => {
     setEnteredAge(event.target.value);
+    if (event.target.value.trim().length > 0) {
+      setIsValid(true);
+    }
   };
 
   const onSubmitHandler = (event) => {
@@ -21,7 +28,14 @@ const UserInput = (props) => {
     const personData = {
       name: enteredName,
       age: enteredAge,
-      id: Math.random().toString()
+      id: Math.random().toString(),
+    };
+
+    if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
+      setIsValid(false);
+      return;
+    } else {
+      setIsValid(true);
     }
 
     props.addUser(personData);
@@ -30,15 +44,37 @@ const UserInput = (props) => {
   };
 
   return (
-    <div className="form-wrap">
+    <div className={`form-wrap ${!isValid ? "invalid" : ""}`}>
+      <div className="alert-wrap">
+        <div className="alert">
+          <p>Your input is not valid</p>
+          <button>
+            <span>
+              <i className="fa-solid fa-xmark"></i>
+            </span>
+          </button>
+        </div>
+      </div>
       <form className="form" onSubmit={onSubmitHandler}>
         <div className="input-wrap">
           <label htmlFor="username">Enter Your Name :</label>
-          <input type="text" id="username" name="username" value={enteredName} onChange={nameChangeHandler} />
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={enteredName}
+            onChange={nameChangeHandler}
+          />
         </div>
         <div className="input-wrap">
           <label htmlFor="age">Enter Your Age (20 to 40) : </label>
-          <input type="number" id="name" name="age" value={enteredAge} onChange={ageChangeHandler} />
+          <input
+            type="number"
+            id="name"
+            name="age"
+            value={enteredAge}
+            onChange={ageChangeHandler}
+          />
         </div>
         <Button type="submit">Submit</Button>
       </form>
