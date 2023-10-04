@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+
+:root{
+  --skyblue: #caf0f8;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Croissant One', cursive;
+}
+
+ul{
+  list-style: none;
+}
+a{
+  text-align: none;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  font-family: 'Croissant One', cursive;
+}
