@@ -7,3 +7,9 @@
   align-items: center;
   background: url(./assets/images/react-demo-project-2-bg.jpg) no-repeat center center/cover;
 }
+
+.no-user{
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
