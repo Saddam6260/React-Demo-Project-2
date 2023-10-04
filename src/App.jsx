@@ -1,15 +1,14 @@
-import './App.css'
-import UserInput from './components/UserInput/UserInput';
-import UserList from './components/UserList/UserList';
+import "./App.css";
+import UserInput from "./components/PersonData/UserInput/UserInput";
+import UserList from "./components/PersonData/UserList/UserList";
 
 function App() {
-
   return (
-    <div className='container'>
+    <div className="container">
       <UserInput />
       <UserList />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

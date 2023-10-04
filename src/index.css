@@ -2,6 +2,8 @@
 
 :root{
   --skyblue: #caf0f8;
+  --bisque: #f7e1d7;
+  --darkred: #bc4749;
 }
 
 *{
@@ -25,4 +27,5 @@ button{
   background-color: transparent;
   border: none;
   font-family: 'Croissant One', cursive;
+  cursor: pointer;
 }

@@ -1,0 +1,23 @@
+.form-wrap{
+    width: 60%;
+    max-width: 450px;
+    background-color: var(--bisque);
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.input-wrap{
+    display: flex;
+    flex-flow: column;
+    row-gap: 5px;
+}
+.input-wrap:nth-child(2) {
+    margin-top: 10px;
+}
+.input-wrap input{
+    border: .5px solid black;
+    outline: none;
+    padding: 6px ;
+}
+.input-wrap input:focus{
+    background-color: var(--skyblue);
+}
